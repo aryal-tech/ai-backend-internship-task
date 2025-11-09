@@ -18,7 +18,7 @@ The entire application is containerized with Docker and designed with a clean, m
 ### Conversational RAG API (`POST /chat`)
 -   **Custom RAG Pipeline:** Implemented from scratch without relying on high-level abstractions like LangChain's `RetrievalQAChain`, demonstrating a deep understanding of the RAG workflow.
 -   **Multi-Turn Conversation:** Utilizes **Redis** to maintain chat history, enabling the model to understand context in follow-up questions.
--   **Local LLM Integration:** Powered by a local LLM via **Ollama** (`phi3:medium` or `llama3`) for generation, ensuring privacy and zero external API costs for the core logic.
+-   **Local LLM Integration:** Powered by a groq for generation, ensuring privacy and zero external API costs for the core logic.
 -   **Interview Booking:** The LLM can intelligently identify booking requests, extract `name`, `email`, `date`, and `time` from natural language, and store the confirmed booking in the MySQL database.
 
 ## Tech Stack
@@ -30,7 +30,7 @@ The entire application is containerized with Docker and designed with a clean, m
 -   **Metadata Database:** MySQL
 -   **Chat Memory:** Redis
 -   **Local Embeddings:** `fastembed` with `BAAI/bge-small-en-v1.5`
--   **Local LLM:** Ollama (Recommended: `phi3:medium` or `llama3`)
+-   **LLM:**llama-3.1-8b-instant
 -   **Data Validation:** Pydantic
 
 
@@ -187,3 +187,4 @@ Custom RAG Pipeline: The RAG logic in rag_service.py was built from the ground u
 Robust Booking: The booking system uses a "prompt engineering" approach, instructing the LLM to return a specific JSON format. This avoids version-specific issues with the Ollama tools API and is more compatible across different models.
 Separation of Concerns: The code is organized into services (business logic), repositories (data access), and api (HTTP layer), making it easy to test, maintain, and extend.
 Dependency Injection: FastAPI's dependency injection system is used extensively to manage clients (DB sessions, Redis, etc.) and services, promoting clean and testable code.
+
