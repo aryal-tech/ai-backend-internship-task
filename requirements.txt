@@ -1,0 +1,33 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.8
+pydantic-settings>=2.3
+httpx>=0.27
+
+# Vector DB + memory
+qdrant-client>=1.9
+redis>=5.0
+
+# DB (MySQL) + migrations
+SQLAlchemy>=2.0
+asyncmy>=0.2.9
+alembic>=1.13
+
+# Embeddings + tokenization
+openai>=1.43
+tiktoken>=0.7
+
+# Text processing
+pypdf>=4.2
+nltk>=3.9
+
+# Validation / dates
+email-validator>=2.1
+python-dateutil>=2.9
+
+# OCR wrapper
+pytesseract>=0.3.10
+
+fastembed>=0.3.1
+
+cryptography
